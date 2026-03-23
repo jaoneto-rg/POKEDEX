@@ -26,7 +26,7 @@ main {
 
 .pokedex {
     width: 100%;
-    max-width: 420px;
+    max-width: 520px;
     aspect-ratio: 3 / 4.2;
     background: url('../images/pokedex.png') no-repeat center;
     background-size: contain;
@@ -36,11 +36,11 @@ main {
 
 .pokemon_image {
     position: absolute;
-    bottom: 55%;
+    bottom: 52%;
     left: 50%;
     transform: translate(-62%, 20%);
     object-fit: contain;
-    height: 20%;
+    height: 26%;
     image-rendering: pixelated;
 }
 
@@ -77,19 +77,24 @@ main {
     background: #f2f2f2;
 }
 
+.input_search:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 .buttons {
     position: absolute;
     bottom: 9%;
-    left: 50%;
-    width: 65%;
+    left: 47%;
+    width: 68%;
     display: flex;
     justify-content: space-between;
     transform: translateX(-50%);
 }
 
 .button {
-    width: 30%;
-    padding: 4%;
+    width: 25%;
+    padding: 3%;
     border: 2px solid #000;
     border-radius: 5px;
     font-size: clamp(8px, 5vw, 1rem);
@@ -100,7 +105,32 @@ main {
     cursor: pointer;
 }
 
+.button_shiny {
+    background: #d4b000;
+    color: #1f1f1f;
+}
+
+.button_shiny[aria-pressed="true"] {
+    background: #ffdf33;
+    box-shadow: inset -2px 2px 0 #9a7f00;
+}
+
+.button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 .button:active {
     box-shadow: inset -2px 2px 0 #222;
     font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+    .pokedex {
+        max-width: 420px;
+    }
+
+    .pokemon_image {
+        height: 22%;
+    }
 }
